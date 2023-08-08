@@ -16,7 +16,7 @@ jobs:
       # Ref: https://docs.vyos.io/en/latest/contributing/build-vyos.html#build
       image: vyos/vyos-build:equuleus
       env:
-        TZ: Asia/Tokyo
+        TZ: Australia/Adelaide
       options: --privileged
       
 
@@ -38,7 +38,7 @@ jobs:
         
         ./configure \
           --architecture amd64 \
-          --build-by naa0yama@aoya6i.com \
+          --build-by samfty@gmail.com \
           --build-type release \
           --version ${{ env.RELEASE_VERSION }}
 
