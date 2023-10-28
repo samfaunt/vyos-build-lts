@@ -1,9 +1,9 @@
- name: VyOS RC 1.4 Build
+name: VyOS RC 1.4 Build
 
 on:
   push:
     tags:
-      - 1.4.*
+      - '[1]+.[4]+.[0-9]+'
 
 jobs:
   build:
