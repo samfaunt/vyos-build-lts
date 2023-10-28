@@ -15,7 +15,7 @@ jobs:
       # For VyOS 1.4 (equuleus) use vyos/vyos-build:sagitta
       # For our VyOS rolling release you should use vyos/vyos-build which will always refer to the latest image.
       # Ref: https://docs.vyos.io/en/latest/contributing/build-vyos.html#build
-      image: vyos/vyos-build:equuleus
+      image: vyos/vyos-build:sagitta
       env:
         TZ: Australia/Adelaide
       options: --privileged
@@ -30,7 +30,7 @@ jobs:
       run: |
         set -eux
         
-        git clone -b current --single-branch https://github.com/vyos/vyos-build
+        git clone -b sagitta --single-branch https://github.com/vyos/vyos-build
 
     #- name: configure
     #  working-directory: vyos-build
