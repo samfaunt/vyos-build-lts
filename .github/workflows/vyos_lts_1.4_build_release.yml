@@ -1,4 +1,4 @@
-name: VyOS RC 1.4 Build
+ name: VyOS RC 1.4 Build
 
 on:
   push:
@@ -30,25 +30,26 @@ jobs:
       run: |
         set -eux
         
-        git clone -b sagitta --single-branch https://github.com/vyos/vyos-build
+        git clone -b current --single-branch https://github.com/vyos/vyos-build
 
-    - name: configure
-      working-directory: vyos-build
-      run: |
-        set -eux
-        
-        ./configure \
-          --architecture amd64 \
-          --build-by samfty@gmail.com \
-          --build-type release \
-          --version ${{ env.RELEASE_VERSION }}
+    #- name: configure
+    #  working-directory: vyos-build
+    #  run: |
+    #    set -eux
+    #    
+    #    ./configure \
+    #      --architecture amd64 \
+    #      --build-by samfty@gmail.com \
+    #      --build-type release \
+    #      --version ${{ env.RELEASE_VERSION }}
 
     - name: make iso
       working-directory: vyos-build
       run: |
         set -eux
         
-        make iso
+        make clean
+        ./build-vyos-image iso --architecture amd64 --build-by "samfty@gmail.com"
 
     - name: ls
       run: |
