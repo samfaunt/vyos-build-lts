@@ -1,5 +1,5 @@
 ---
-name: VyOS 1.4
+name: VyOS 1.4.0
 
 on:
   push:
